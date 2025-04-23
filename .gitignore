@@ -1,0 +1,30 @@
+# Ignore Go build files
+/bin
+/pkg
+
+# Ignore Go module files
+go.mod
+go.sum
+
+# Ignore Docker build files
+/Dockerfile
+/.dockerignore
+
+# Ignore logs
+/logs
+
+# Ignore database files
+/db
+
+# Ignore JWT secret key
+/utils/jwt.go:jwtSecret
+
+# Ignore IDE and editor files
+/.idea
+/.vscode
+/.DS_Store
+
+# Ignore OS files
+/Thumbs.db
+/.AppleDouble
+/.LSOverride
