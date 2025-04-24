@@ -7,6 +7,7 @@ import (
 
 	"go-auth/models"
 
+	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -14,6 +15,12 @@ import (
 var DB *gorm.DB
 
 func InitDB() *gorm.DB {
+
+	errenv := godotenv.Load()
+	if errenv != nil {
+		log.Fatalf("Error loading .env file: %v", errenv)
+	}
+
 	dbHost := os.Getenv("DB_HOST")
 	dbUser := os.Getenv("DB_USER")
 	dbPassword := os.Getenv("DB_PASSWORD")

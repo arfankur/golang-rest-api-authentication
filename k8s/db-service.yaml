@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+spec:
+  ports:
+  - port: 3306        # External port for database communication
+    targetPort: 3306  # Container's port
+  selector:
+    app: mysql        # Matches labels in mysql deployment
+  clusterIP: None      # Use a headless service for better database support

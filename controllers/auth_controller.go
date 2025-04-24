@@ -24,6 +24,7 @@ func Register(c *gin.Context) {
 	}
 
 	user.Password = string(hashedPassword)
+	// user.Password = user.Password
 
 	if err := config.DB.Create(&user).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create user"})
